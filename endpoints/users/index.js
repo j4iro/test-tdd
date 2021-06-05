@@ -17,14 +17,12 @@ const handlers = ({ axios }) => ({
     const { body } = req;
     const { id } = req.params;
     await axios.put(`https://jsonplaceholder.typicode.com/users/${id}`, body);
-    res.status(204);
-    res.end();
+    res.sendStatus(204);
   },
   delete: async (req, res) => {
     const { id } = req.params;
     await axios.delete(`https://jsonplaceholder.typicode.com/users/${id}`);
-    res.status(204);
-    res.end();
+    res.sendStatus(204);
   },
 });
 
